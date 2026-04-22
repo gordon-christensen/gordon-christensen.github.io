@@ -1,7 +1,41 @@
-theme: minima
 title: Rutabaga Yoga
-description: A place for practice and study
-author: Gordon
-email: gordon@rutabaga-yoga.org
+tagline: A place for practice and study
+description: >-
+  Yoga as philosophy and self-inquiry — a place for practice and study
+  with Gordon Christensen.
+author:
+  name: Gordon Christensen
+  email: gordon@rutabaga-yoga.org
+url: "https://rutabaga-yoga.org"
+baseurl: ""
 
+# Build
+permalink: /writing/:year/:month/:slug/
+timezone: America/Chicago
+markdown: kramdown
+highlighter: rouge
 
+# Collections / pagination (keep it GH-Pages friendly)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Navigation (edit to reorder / rename)
+nav:
+  - { title: "Practice",  url: "/about/"   }
+  - { title: "Writing",   url: "/writing/" }
+  - { title: "Contact",   url: "/contact/" }
+
+# Social
+social:
+  email: gordon@rutabaga-yoga.org
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+  - .github

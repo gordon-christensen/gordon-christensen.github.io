@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="post-article">
+  <header class="post-header">
+    <p class="eyebrow">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+    </p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.excerpt_text %}<p class="post-standfirst">{{ page.excerpt_text }}</p>{% endif %}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <a class="back-link" href="{{ '/writing/' | relative_url }}">&larr; All writing</a>
+  </footer>
+</article>

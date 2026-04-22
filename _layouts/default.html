@@ -1,0 +1,9 @@
+{% include head.html %}
+<body class="layout-{{ page.layout | default: 'default' }} {% if page.class %}{{ page.class }}{% endif %}">
+  {% include nav.html %}
+  <main id="main" class="site-main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+</body>
+</html>

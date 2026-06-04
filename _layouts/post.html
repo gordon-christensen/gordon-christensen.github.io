@@ -20,3 +20,15 @@ layout: default
     <a class="back-link" href="{{ '/writing/' | relative_url }}">&larr; All writing</a>
   </footer>
 </article>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
+  document.querySelectorAll('pre code.language-mermaid').forEach(el => {
+    const div = document.createElement('div');
+    div.className = 'mermaid';
+    div.textContent = el.textContent;
+    el.parentElement.replaceWith(div);
+  });
+  await mermaid.run();
+</script>

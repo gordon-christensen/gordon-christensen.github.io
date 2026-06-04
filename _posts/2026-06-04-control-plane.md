@@ -34,6 +34,8 @@ flowchart LR
     CP["control plane"] -->|start 3 workers| DP["data plane"]
 ```
 
+*Figure: The directive model — the control plane sends a command; the data plane obeys.*
+
 **The problem:** if a command gets lost, the system stays wrong. There's no automatic recovery. You have to build retry logic, acknowledgment tracking, and failure detection yourself — or accept drift.
 
 **When it fits:** reliable message delivery is guaranteed, commands are cheap to replay, and failure modes are simple.
@@ -53,6 +55,8 @@ flowchart LR
     DP --> OBS["observe"]
     OBS --> AS
 ```
+
+*Figure: The reconciliation loop — observe actual state, diff against desired, act, repeat.*
 
 **The payoff:** it doesn't matter how the world got out of sync — crash, partial failure, someone manually changed something. The next loop iteration fixes it. This is called **self-healing**.
 
@@ -87,6 +91,8 @@ flowchart TD
     O --> S3["step 3"]
 ```
 
+*Figure: Orchestration — one coordinator tells every participant what to do and when.*
+
 **The upside:** easy to reason about. The full workflow lives in one place. Debugging means reading one component's logs.
 
 **The downside:** the orchestrator is a single point of failure and a single point of change. Adding a new step means changing the orchestrator.
@@ -105,6 +111,8 @@ flowchart LR
     B --> E3([event])
     E3 --> C["service C"]
 ```
+
+*Figure: Choreography — events trigger local reactions; no central coordinator.*
 
 **The upside:** loosely coupled. Adding a new participant means deploying one new service that subscribes to existing events. Nobody else changes.
 

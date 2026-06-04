@@ -31,4 +31,22 @@ layout: default
     el.parentElement.replaceWith(div);
   });
   await mermaid.run();
+  let figN = 0;
+  document.querySelectorAll('.mermaid').forEach(el => {
+    figN++;
+    const figure = document.createElement('figure');
+    figure.className = 'diagram';
+    el.parentNode.insertBefore(figure, el);
+    figure.appendChild(el);
+    const next = figure.nextElementSibling;
+    const cap = document.createElement('figcaption');
+    if (next && next.tagName === 'P' && next.textContent.trim().toLowerCase().startsWith('figure:')) {
+      const text = next.textContent.replace(/^figure:\s*/i, '');
+      cap.innerHTML = `<strong>Figure ${figN}:</strong> ${text}`;
+      next.remove();
+    } else {
+      cap.textContent = `Figure ${figN}`;
+    }
+    figure.appendChild(cap);
+  });
 </script>

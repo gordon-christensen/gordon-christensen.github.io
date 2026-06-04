@@ -555,6 +555,21 @@ body:not(.has-hero) .site-header { background: var(--plum); }
   .archive-row a { grid-template-columns: 1fr; gap: var(--sp-1); padding: var(--sp-3) 0; }
 }
 
+/* --- Diagrams ----------------------------------------------------------- */
+
+.prose figure.diagram {
+  margin: var(--sp-6) 0;
+  text-align: center;
+}
+.prose figure.diagram figcaption {
+  font-family: var(--font-brand);
+  font-size: .78rem;
+  letter-spacing: .08em;
+  color: var(--ink-mute);
+  margin-top: var(--sp-2);
+  text-align: center;
+}
+
 /* --- Post article ------------------------------------------------------- */
 
 .post-footer {

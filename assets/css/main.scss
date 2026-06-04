@@ -29,7 +29,7 @@
 
   /* --- Type --- */
   --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Spectral', 'Source Serif Pro', Georgia, serif;
+  --font-body:    'Spectral', 'Spectral-fallback', 'Source Serif Pro', Georgia, serif;
   --font-brand:   'Archivo', system-ui, -apple-system, sans-serif;
 
   /* --- Rhythm --- */
@@ -53,6 +53,17 @@
   --nav-h:  72px;
 
   --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+/* --- Fallback font metric overrides (eliminate FOUT layout shift) -------- */
+
+@font-face {
+  font-family: 'Spectral-fallback';
+  src: local('Georgia');
+  size-adjust: 140.01%;
+  ascent-override: 105.90%;
+  descent-override: 46.30%;
+  line-gap-override: 0%;
 }
 
 /* --- Reset / base -------------------------------------------------------- */

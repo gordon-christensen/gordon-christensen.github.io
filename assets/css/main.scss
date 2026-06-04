@@ -354,6 +354,8 @@ body:not(.has-hero) .site-header { background: var(--plum); }
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--ink);
+  text-align: justify;
+  hyphens: auto;
 }
 .prose h2 {
   margin-top: var(--sp-8);

@@ -536,6 +536,7 @@ body:not(.has-hero) .site-header { background: var(--plum); }
   color: var(--ink-soft);
   margin: 0;
   max-width: 60ch;
+  grid-column: 2;
 }
 @media (max-width: 640px) {
   .archive-row a { grid-template-columns: 1fr; gap: var(--sp-1); padding: var(--sp-3) 0; }

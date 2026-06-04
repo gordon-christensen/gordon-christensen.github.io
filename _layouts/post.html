@@ -32,11 +32,3 @@ layout: default
   });
   await mermaid.run();
 </script>
-
-<script type="module">
-  import { createHyphenator, justifyContent } from 'https://esm.sh/tex-linebreak@0.9.0';
-  import enUsPatterns from 'https://esm.sh/hyphenation.en-us';
-  const hyphenate = createHyphenator(enUsPatterns);
-  const paragraphs = Array.from(document.querySelectorAll('.prose p'));
-  justifyContent(paragraphs, hyphenate);
-</script>
